@@ -1,0 +1,26 @@
+.input{
+    background-color: transparent;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #5A698F;
+    color: white;
+    padding: 0px 16px 18px 16px;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 18.9px;
+}
+
+.input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input:hover{
+    border-color: white;
+}
+
+.input:focus{
+    outline: none;
+    border-color: white;
+}

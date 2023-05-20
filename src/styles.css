@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'outfit';
+    src: url('./Common/Assets/Outfit-VariableFont_wght.ttf');
+}
+
+:root{
+    --font: 'outfit';
+}
+
+:root{
+    --button-bg: #FC4747;
+    --button-hover: white;
+    --icon-hover: white;
+}
+
+:root{
+    --body-bg: #10141E;
+    --container-bg: #161D2F;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    transition: all 0.2s linear;
+}
+
+
+body{
+    background-color: var(--body-bg);
+}
