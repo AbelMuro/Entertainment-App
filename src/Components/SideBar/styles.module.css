@@ -1,0 +1,65 @@
+.sidebar{
+    width: 96px;
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35.41px 0px;
+    border-radius: 20px;
+    background-color: var(--container-bg);
+}
+
+.sidebar_icons{
+    width: 32px;
+    gap: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar_links{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sidebar_link{
+    cursor: pointer;
+    list-style-type: none;
+    width: 20px;
+    height: 20px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #5A698F;
+}
+
+.sidebar_link:nth-child(1){
+    mask-image: url('../../Common/Assets/icon-nav-home.svg');
+    -webkit-mask-image: url('../../Common/Assets/icon-nav-home.svg');
+}
+
+.sidebar_link:nth-child(2){
+    mask-image: url('../../Common/Assets/icon-nav-movies.svg');
+    -webkit-mask-image: url('../../Common/Assets/icon-nav-movies.svg');
+}
+
+.sidebar_link:nth-child(3){
+    mask-image: url('../../Common/Assets/icon-nav-tv-series.svg');
+    -webkit-mask-image: url('../../Common/Assets/icon-nav-tv-series.svg');
+}
+
+.sidebar_link:nth-child(4){
+    mask-image: url('../../Common/Assets/icon-nav-bookmark.svg');
+    -webkit-mask-image: url('../../Common/Assets/icon-nav-bookmark.svg');
+}
+
+.sidebar_link:hover{
+    background-color: white;
+}
+
+.userImage{
+    width: 40px;
+    object-fit: contain;
+}

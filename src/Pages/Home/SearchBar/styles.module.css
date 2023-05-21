@@ -1,0 +1,29 @@
+.inputContainer{
+    position: relative;
+    border: none;
+    height: 32px;
+    margin-top: 32px;
+}
+
+.searchBar{
+    width: 400px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    padding-left: 56px;
+    font-family: var(--font);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30.24px;
+}
+
+.searchIcon{
+    width: 32px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    margin: auto;
+}
+

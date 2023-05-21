@@ -4,7 +4,16 @@
 }
 
 :root{
+    --error: #FC4747;
+}
+
+:root{
     --font: 'outfit';
+}
+
+:root{
+    --closest: 10;
+    --closer: 30;
 }
 
 :root{
@@ -29,4 +38,5 @@
 
 body{
     background-color: var(--body-bg);
+    padding: 32px 0px 0px 32px;
 }

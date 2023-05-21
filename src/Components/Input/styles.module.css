@@ -1,4 +1,10 @@
+.inputContainer{
+    position: relative;
+    border: none;
+}
+
 .input{
+    width: 100%;
     background-color: transparent;
     border-top: 0px;
     border-left: 0px;
@@ -10,6 +16,18 @@
     font-size: 15px;
     font-weight: 300;
     line-height: 18.9px;
+}
+
+.errorMessage{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 17px;
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16.38px;
+    color: var(--error);
 }
 
 .input::placeholder{
