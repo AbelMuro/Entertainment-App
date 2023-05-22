@@ -6,15 +6,26 @@
 }
 
 .searchBar{
-    width: 400px;
-    height: 32px;
+    width: 100%;
+    height: 46px;
     border: none;
+    padding-bottom: 14px;
     background-color: transparent;
     padding-left: 56px;
     font-family: var(--font);
     font-size: 24px;
     font-weight: 300;
     line-height: 30.24px;
+    color: white;
+}
+
+.searchBar::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.searchBar:focus{
+    border-bottom: 1px solid #5A698F;
+    outline: none;
 }
 
 .searchIcon{

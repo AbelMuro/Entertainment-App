@@ -1,12 +1,28 @@
-import React from 'react';
+import React, {useState, useContext, useTransition} from 'react';
 import styles from './styles.module.css';
 import searchIcon from './assets'
+import {Context} from '../../../Context';
 
-//this is where i left off, i will need to style the input when its focused
 function SearchBar() {
+    const [query, setQuery] = useState('');
+    const {dispatchSearch} = useContext(Context);
+    const [isPending, startTransition] = useTransition();
+
+    const handleQuery = (e) => {
+        setQuery(e.target.value);
+        startTransition(() => {
+            dispatchSearch({type: 'set query', query: query})
+        })
+    }
+
     return(
         <fieldset className={styles.inputContainer}>
-            <input type='text' className={styles.searchBar} placeholder='Search for movies or TV series'/>   
+            <input 
+                type='text' 
+                className={styles.searchBar} 
+                value={query}
+                onChange={handleQuery}
+                placeholder='Search for movies or TV series'/>   
             <img src={searchIcon} className={styles.searchIcon}/>         
         </fieldset>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import ShareContext from './Context';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -19,4 +20,4 @@ function App () {
     )
 }
 
-export default App;
+export default ShareContext(App);
