@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
-import assets from '../../Common/Assets';
+import assets from '../../Common/icons';
 
 function Sidebar() {
 

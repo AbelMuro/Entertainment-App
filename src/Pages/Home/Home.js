@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '../../Components/SideBar';
 import SearchBar from './SearchBar';
 import Trending from './Trending';
+import Recommended from './Recommended';
 import styles from './styles.module.css'
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
                 <section className={styles.content}>
                     <SearchBar/>
                     <Trending/>
+                    <Recommended/>
                 </section>
             </main>
         )

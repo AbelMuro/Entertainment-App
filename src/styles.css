@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'outfit';
-    src: url('./Common/Assets/Outfit-VariableFont_wght.ttf');
+    src: url('./Common/Font/Outfit-VariableFont_wght.ttf');
 }
 
 :root{
@@ -12,8 +12,9 @@
 }
 
 :root{
-    --closest: 10;
-    --closer: 30;
+    --closest: 30;    
+    --closer: 10;
+    --far: 0;
 }
 
 :root{

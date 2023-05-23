@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
 import styles from './styles.module.css';
-import assets from '../../Common/Assets';
+import assets from '../../Common/icons';
 import Input from '../../Components/Input';
 import {useNavigate} from 'react-router-dom';
 import {auth} from '../../Firebase';

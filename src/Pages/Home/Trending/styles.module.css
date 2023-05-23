@@ -1,0 +1,116 @@
+.title{
+    font-family: var(--font);
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 40.43px;
+    letter-spacing: -0.5px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.trendingMovies{
+    display: flex;
+    border-radius: 8px 0px 0px 8px;
+    gap: 16px;
+    width: 100%;
+    overflow: scroll;       /* this is where i left off*/
+}
+
+.movie{
+    width: 240px;
+    height: 140px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.movie_image{
+    width: 240px;
+    object-fit: contain;
+    position:relative;
+    z-index: var(--far);
+    border-radius: 8px;
+}
+
+.movie_data{
+    display: grid;
+    grid-template-columns: 26px 3px auto 3px 17px;
+    column-gap: 8px;
+    row-gap: 3px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 16px;
+    bottom: 36px;
+    z-index: var(--closer);
+}
+
+.movie_year, .movie_type, .movie_contentRating{
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15.12px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.movie_type{
+    display: flex;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.movie_icon{
+    width: 12px;
+    object-fit: contain;
+}
+
+.movie_title {
+    grid-column: 1/6;
+    white-space: nowrap;
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.9px;
+    color: white;
+}
+
+.dot{
+    border-radius: 100%;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.movie_bookmark{
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    background-color: rgba(16, 20, 30, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bookmarkIcon{
+    width: 11.67px;
+    height: 14px;
+    mask-image: url('../../../Common/icons/icon-bookmark-empty.svg');
+    -webkit-mask-image: url('../../../Common/icons/icon-bookmark-empty.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-color: white;
+    transform: rotate(1deg);
+}
+
+.movie_bookmark:hover{
+    background-color: white;
+}
+
+.movie_bookmark:hover .bookmarkIcon{
+    background-color: rgba(16, 20, 30, 0.5);
+}
+
+

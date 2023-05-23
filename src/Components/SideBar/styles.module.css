@@ -36,23 +36,23 @@
 }
 
 .sidebar_link:nth-child(1){
-    mask-image: url('../../Common/Assets/icon-nav-home.svg');
-    -webkit-mask-image: url('../../Common/Assets/icon-nav-home.svg');
+    mask-image: url('../../Common/icons/icon-nav-home.svg');
+    -webkit-mask-image: url('../../Common/icons/icon-nav-home.svg');
 }
 
 .sidebar_link:nth-child(2){
-    mask-image: url('../../Common/Assets/icon-nav-movies.svg');
-    -webkit-mask-image: url('../../Common/Assets/icon-nav-movies.svg');
+    mask-image: url('../../Common/icons/icon-nav-movies.svg');
+    -webkit-mask-image: url('../../Common/icons/icon-nav-movies.svg');
 }
 
 .sidebar_link:nth-child(3){
-    mask-image: url('../../Common/Assets/icon-nav-tv-series.svg');
-    -webkit-mask-image: url('../../Common/Assets/icon-nav-tv-series.svg');
+    mask-image: url('../../Common/icons/icon-nav-tv-series.svg');
+    -webkit-mask-image: url('../../Common/icons/icon-nav-tv-series.svg');
 }
 
 .sidebar_link:nth-child(4){
-    mask-image: url('../../Common/Assets/icon-nav-bookmark.svg');
-    -webkit-mask-image: url('../../Common/Assets/icon-nav-bookmark.svg');
+    mask-image: url('../../Common/icons/icon-nav-bookmark.svg');
+    -webkit-mask-image: url('../../Common/icons/icon-nav-bookmark.svg');
 }
 
 .sidebar_link:hover{

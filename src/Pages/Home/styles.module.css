@@ -1,14 +1,17 @@
 .container{
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 96px auto;
     gap: 36px;
 }
 
 .content{
     width: 1184px;
+    overflow: hidden;
 }
 
 @media(max-width: 1345px){
     .content{
-        width: 80%;
+        width: 100%;
     }
 }
