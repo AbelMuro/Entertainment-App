@@ -6,11 +6,11 @@
 }
 
 .content{
-    width: 1184px;
+    width: 1280px;
     overflow: hidden;
 }
 
-@media(max-width: 1345px){
+@media(max-width: 1445px){
     .content{
         width: 100%;
     }

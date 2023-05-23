@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
-import TrendingMovies from '../../../Data/Trending';
+import TrendingMovies from '../../../Data/AllMoviesAndTVseries';
 import icons from '../../../Common/icons';
 
 
@@ -14,9 +14,11 @@ function Trending() {
             </h1>
             <section className={styles.trendingMovies}>
                 {TrendingMovies.map((movie) => {
+                    if(!movie.isTrending) return; 
+
                     return(
                         <div className={styles.movie} key={movie['name']}>
-                            <img src={movie["large image"]} className={styles.movie_image}/>
+                            <img src={movie["large image trending"]} className={styles.movie_image}/>
                             <div className={styles.movie_data}>
                                 <p className={styles.movie_year}>
                                     {movie['year']}
