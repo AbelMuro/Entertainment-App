@@ -3,6 +3,8 @@ import styles from './styles.module.css';
 import AllMoviesAndTVseries from '../../../Data/AllMoviesAndTVseries';
 import assets from '../../../Common/icons'
 
+///this is where i left off, i will need to style the movies below
+
 function Recommended() {
 
     return(
@@ -23,11 +25,17 @@ function Recommended() {
                                         {movie['year']}
                                     </p>
                                     <div className={styles.dot}></div>
-                                    <div className={styles.movie_contentRating}>
+                                    <div className={styles.movie_type}>
                                         <img 
                                             src={movie['type'] === 'Movie' ? assets['movieIcon'] : assets['tvIcon']} 
                                             className={styles.movie_icon}/>
                                         {movie['type']}
+                                    </div>
+                                    <div className={styles.movie_contentRating}>
+                                        {movie['content rating']}
+                                    </div>
+                                    <div className={styles.movie_title}>
+                                        {movie['name']}
                                     </div>
                                 </div>
                             </div>
