@@ -2,30 +2,21 @@ import React, {useState, useRef, useEffect} from 'react';
 import styles from './styles.module.css';
 import assets from '../../Common/icons';
 import Input from '../../Components/Input';
-import {useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {auth} from '../../Firebase';
 import {signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-//this is where i left off, i will need to make <dialog/> into its own component
 function Login() {
-    const [open, setOpen] = useState(false);  
     const [loading, setLoading] = useState(false); 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
-    const cameFromRegisterPage = useLocation();
     const email = useRef();
     const password = useRef();
-    const overlay = useRef();
-    const dialog = useRef();
 
     const handleClick = () => {
         navigate('/register');
-    }
-
-    const handleDialog = () => {
-        setOpen(false);
     }
 
     const handleSubmit = async (e) => {
@@ -43,29 +34,6 @@ function Login() {
             console.log(error)
         }
     }
-
-    useEffect(() => {
-        if(cameFromRegisterPage)
-            setOpen(true);
-    }, [])
-
-    useEffect(() => {
-        if(open){
-            overlay.current.style.display = 'block';
-            setTimeout(() => {
-                dialog.current.style.opacity = '1';
-                overlay.current.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-            }, 100)
-        }    
-        else{
-            overlay.current.style.backgroundColor = '';
-            dialog.current.style.opacity = '';
-            setTimeout(() => {
-                overlay.current.style.display = '';
-            }, 200)            
-        }
-
-    }, [open])
 
 
     useEffect(() => {
@@ -97,15 +65,6 @@ function Login() {
                     <a onClick={handleClick}>Sign Up</a>
                 </p>
             </form>
-            <div className={styles.overlay} ref={overlay}>
-                <dialog open={open} className={styles.dialog} ref={dialog}>
-                    Account has been created. Please log in
-                    <button onClick={handleDialog} className={styles.dialogButton}>
-                        OK
-                    </button>
-                </dialog>
-            </div>
-
         </main>
     )
 }

@@ -1,0 +1,52 @@
+.overlay{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: var(--closest);
+    background-color: transparent
+}
+
+
+.dialog{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    padding: 40px;
+    width: 330px;
+    font-family: var(--font);
+    font-size: 22px;
+    line-height: 40.32px;
+    letter-spacing: -0.5px;
+    color: white;
+    background-color: var(--container-bg);
+}
+
+.dialogButton{
+    margin-top: 16px;
+    color: white;
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    background-color: var(--button-bg);
+    border: none;
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18.9px;
+    cursor: pointer;
+}
+
+.dialogButton:hover{
+    background-color: white;
+    color: #161D2F;
+}

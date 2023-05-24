@@ -2,9 +2,13 @@ import React, {useState, useEffect} from 'react';
 import styles from './styles.module.css';
 import assets from '../../Common/icons';
 import useMediaQuery from '../../Hooks/useMediaQuery';
+import { signOut } from 'firebase/auth';
+import {auth} from '../../Firebase';
+import { useNavigate } from 'react-router-dom';
 
 
 function Sidebar() {
+    const navigate = useNavigate();
     const mobile = useMediaQuery('(max-width: 768px)');
     const [navLink, setNavLink] = useState('home');
 
@@ -14,6 +18,11 @@ function Sidebar() {
 
         const currentNavLink = e.target.id;
         setNavLink(currentNavLink);
+    }
+
+    const handleSignOut = async () => {
+        await signOut(auth);
+        navigate('/')
     }
 
     useEffect(() => {
@@ -32,6 +41,10 @@ function Sidebar() {
         
     }, [navLink])
 
+    useEffect(() => {
+        navigate(`/${navLink}`);
+    }, [navLink])
+
 
     return (
         <aside className={styles.sidebar}>
@@ -42,7 +55,7 @@ function Sidebar() {
                     <ul className={styles.sidebar_links} onClick={handleNavLink}>
                         <li className={styles.sidebar_link} id='home'></li>          
                         <li className={styles.sidebar_link} id='movies'></li>
-                        <li className={styles.sidebar_link} id='tv series'></li>
+                        <li className={styles.sidebar_link} id='tvseries'></li>
                         <li className={styles.sidebar_link} id='bookmarks'></li>
                     </ul>
                 </>
@@ -52,11 +65,15 @@ function Sidebar() {
                     <ul className={styles.sidebar_links} onClick={handleNavLink}>
                         <li className={styles.sidebar_link} id='home'></li>          
                         <li className={styles.sidebar_link} id='movies'></li>
-                        <li className={styles.sidebar_link} id='tv series'></li>
+                        <li className={styles.sidebar_link} id='tvseries'></li>
                         <li className={styles.sidebar_link} id='bookmarks'></li>
                     </ul>
                 </div>}
-            <img src={assets['imageAvatar']} className={styles.userImage} alt={'user profile image'}/>
+            <img 
+                src={assets['imageAvatar']} 
+                onClick={handleSignOut}
+                className={styles.userImage} 
+                alt={'user profile image'}/>
         </aside>
     )
 

@@ -6,9 +6,11 @@ import {useNavigate} from 'react-router-dom';
 import {auth} from '../../Firebase';
 import {createUserWithEmailAndPassword, signOut} from 'firebase/auth';
 import CircularProgress from '@mui/material/CircularProgress';
+import Dialog from './Dialog';
 
 function Register() {
     const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     const email = useRef();
     const password = useRef();
@@ -32,8 +34,8 @@ function Register() {
            setLoading(true);
            await createUserWithEmailAndPassword(auth, userEmail, userPassword); 
            await signOut(auth);
-           setLoading(false)
-           navigate('/', {state: true});
+           setLoading(false);           
+           setOpen(true)                    //this will open the dialog that displays a message to the user
         }
         catch(error){
             console.log(error);
@@ -61,7 +63,7 @@ function Register() {
                     </a>
                 </p>
             </form>
-
+            <Dialog openDialog={open}/>
         </main>
     )
 }
