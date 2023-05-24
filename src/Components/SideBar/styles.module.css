@@ -63,3 +63,46 @@
     width: 40px;
     object-fit: contain;
 }
+
+@media(max-width: 768px){
+    .sidebar{
+        width: 97%;
+        height: 72px;
+        transition: width 0.2s linear;
+        padding: 0px 24px;
+    }
+
+    .sidebar_icons, .sidebar_links, .sidebar{
+        flex-direction: row;
+    }
+
+    .sidebar_icons{
+        width: 70%;
+    }
+
+    .userImage{
+        width: 32px;
+        height: 32px;
+        border: 1px solid white;
+        border-radius: 100%;
+    }
+}
+
+@media(max-width: 600px) {
+    .sidebar{
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .sidebar_logo{
+        width: 25px;
+    }
+
+    .sidebar_link{
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        mask-size: 16px 16px;
+        -webkit-mask-size: 16px 16px;
+    }
+}

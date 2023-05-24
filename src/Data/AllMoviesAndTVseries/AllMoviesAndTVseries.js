@@ -119,9 +119,9 @@ export const AllMoviesAndTVseries = [
         "content rating": "PG",
         "year": 2016,
         "isTrending" : false,
-        "large image":  images['autosportTheSeriesLarge'],  
-        "medium image" : images['autosportTheSeriesMedium'],
-        "small image": images['autosportTheSeriesSmall'],      
+        "large image":  images['autoSportTheSeriesLarge'],  
+        "medium image" : images['autoSportTheSeriesMedium'],
+        "small image": images['autoSportTheSeriesSmall'],      
     },
     {
         "name" : "Same Answer II",

@@ -15,6 +15,8 @@
     width: 100%;
     overflow: scroll;   
     scroll-behavior: smooth;
+    padding-bottom: 5px;
+    margin-bottom: 34px;
 }
 
 .trendingMovies::-webkit-scrollbar{
@@ -29,38 +31,46 @@
 }
 
 .movie{
-    width: 240px;
-    height: 140px;
+    width: 470px;
     position: relative;
     border-radius: 8px;
 }
 
+.overflow{
+    overflow: hidden;
+    border-radius: 8px;
+}
+
 .movie_image{
-    width: 240px;
+    width: 470px;
     object-fit: contain;
     position:relative;
     z-index: var(--far);
     border-radius: 8px;
 }
 
+.movie_image:hover{
+    transform: scale(1.5);
+}
+
 .movie_data{
     display: grid;
-    grid-template-columns: 26px 3px auto 3px 17px;
+    grid-template-columns: 32px 3px auto 3px 21px;
     column-gap: 8px;
     row-gap: 3px;
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 16px;
-    bottom: 36px;
+    left: 24px;
+    bottom: 24px;
     z-index: var(--closer);
 }
 
 .movie_year, .movie_type, .movie_contentRating{
     font-family: var(--font);
     font-weight: 300;
-    font-size: 12px;
-    line-height: 15.12px;
+    font-size: 15px;
+    line-height: 18.9px;
     color: rgba(255, 255, 255, 0.75);
 }
 
@@ -79,9 +89,9 @@
     grid-column: 1/6;
     white-space: nowrap;
     font-family: var(--font);
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 500;
-    line-height: 18.9px;
+    line-height: 30.24px;
     color: white;
 }
 
@@ -94,10 +104,10 @@
 
 .movie_bookmark{
     position: absolute;
-    top: 10px;
-    right: 16px;
-    width: 26px;
-    height: 26px;
+    top: 16px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
     border-radius: 100%;
     background-color: rgba(16, 20, 30, 0.5);
     display: flex;
@@ -125,4 +135,48 @@
     background-color: rgba(16, 20, 30, 0.5);
 }
 
+/* desktop and tablet are the same, except for mobile*/
+
+@media(max-width: 600px){
+    .trendingMovies{
+        margin-bottom: 24px;
+    }
+
+    .movie, .movie_image{
+        width: 240px;
+    }
+    .movie_data{
+        bottom: 16px;
+        left: 16px;
+    }
+
+    .movie_year, .movie_type, .movie_contentRating{
+        font-size: 12px;
+        line-height: 15.12px;
+    }
+
+    .movie_title{
+        font-size: 15px;
+        line-height: 18.9px;
+    }
+
+    .movie_contentRating{
+        background-color: rgba(255, 255, 255, 0.15);
+        width: 34px;
+        height: 21px;
+        border-radius: 10.5px;
+        position: absolute;
+        left: 166px;
+        bottom: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }    
+
+    .title{
+        font-size: 20px;
+        line-height: 18.9px;
+        margin-bottom: 16px;
+    }
+}
 

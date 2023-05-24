@@ -7,6 +7,8 @@ import {auth} from '../../Firebase';
 import {signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
 import CircularProgress from '@mui/material/CircularProgress';
 
+
+//this is where i left off, i will need to make <dialog/> into its own component
 function Login() {
     const [open, setOpen] = useState(false);  
     const [loading, setLoading] = useState(false); 

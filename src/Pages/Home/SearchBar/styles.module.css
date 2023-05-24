@@ -2,8 +2,7 @@
     position: relative;
     border: none;
     height: 32px;
-    margin-top: 32px;
-    margin: 32px 0px 34px 0px
+    margin: 32px 0px 34px 0px;
 }
 
 .searchBar{
@@ -39,3 +38,24 @@
     margin: auto;
 }
 
+@media(max-width: 768px){
+    .inputContainer{
+        margin-top: 0px;
+        margin-bottom: 33px;
+    }
+}
+
+@media(max-width: 500px) {
+    .searchBar{
+        font-size: 16px;
+        line-height: 20.16px;
+        padding-left: 40px;
+    }
+    .inputContainer{
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+    .searchIcon{
+        width: 24px;
+    }
+}

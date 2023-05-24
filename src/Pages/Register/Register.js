@@ -4,7 +4,7 @@ import assets from '../../Common/icons';
 import Input from '../../Components/Input';
 import {useNavigate} from 'react-router-dom';
 import {auth} from '../../Firebase';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {createUserWithEmailAndPassword, signOut} from 'firebase/auth';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function Register() {
@@ -31,6 +31,7 @@ function Register() {
         try{
            setLoading(true);
            await createUserWithEmailAndPassword(auth, userEmail, userPassword); 
+           await signOut(auth);
            setLoading(false)
            navigate('/', {state: true});
         }
