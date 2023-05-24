@@ -3,13 +3,6 @@
     src: url('./Common/Font/Outfit-VariableFont_wght.ttf');
 }
 
-.container{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 96px auto;
-    gap: 36px;
-}
-
 :root{
     --error: #FC4747;
 }

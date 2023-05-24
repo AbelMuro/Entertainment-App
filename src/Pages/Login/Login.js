@@ -28,7 +28,7 @@ function Login() {
             setLoading(true)
             await signInWithEmailAndPassword(auth, userEmail, userPassword);
             setLoading(false);
-            navigate('/home');
+            navigate('/user');
         }
         catch(error){
             console.log(error)

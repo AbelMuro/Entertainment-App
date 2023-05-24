@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Sidebar from './Components/SideBar'
 import ShareContext from './Context';
+import DisplayApp from './Components/DisplayApp';
 import Home from './Pages/Home';
 import Movies from './Pages/Movies'
 import Login from './Pages/Login';
@@ -22,15 +23,15 @@ function App () {
 
     return (
         <BrowserRouter>
-            <main className={isLoggedIn ? 'container' : ''}>
-                {isLoggedIn ? <Sidebar/> : <></>}
                 <Routes>
                     <Route path='/' element={<Login/>}/>  
-                    <Route path='/register' element={<Register/>}/>   
-                    <Route path='/home' element={<Home/>}/>  
-                    <Route path='/movies' element={<Movies/>}/>                    
+                    <Route path='/register' element={<Register/>}/>
+                    <Route path='/user' element={<DisplayApp/>}>
+                        <Route path='/user/home' element={<Home/>}/>  
+                        <Route path='/user/movies' element={<Movies/>}/>                            
+                    </Route>  
+                
                 </Routes>            
-            </main>
             
 
         </BrowserRouter>

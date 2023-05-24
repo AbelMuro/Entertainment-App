@@ -42,7 +42,7 @@ function Sidebar() {
     }, [navLink])
 
     useEffect(() => {
-        navigate(`/${navLink}`);
+        navigate(`${navLink}`);
     }, [navLink])
 
 
@@ -53,20 +53,20 @@ function Sidebar() {
                 <>
                     <img src={assets['logo']} className={styles.sidebar_logo} alt={'company logo'}/>
                     <ul className={styles.sidebar_links} onClick={handleNavLink}>
-                        <li className={styles.sidebar_link} id='home'></li>          
-                        <li className={styles.sidebar_link} id='movies'></li>
-                        <li className={styles.sidebar_link} id='tvseries'></li>
-                        <li className={styles.sidebar_link} id='bookmarks'></li>
+                        <li className={styles.sidebar_link} id='/user/home'></li>          
+                        <li className={styles.sidebar_link} id='/user/movies'></li>
+                        <li className={styles.sidebar_link} id='/user/tvseries'></li>
+                        <li className={styles.sidebar_link} id='/user/bookmarks'></li>
                     </ul>
                 </>
                 :    
                 <div className={styles.sidebar_icons}>
                     <img src={assets['logo']} className={styles.sidebar_logo} alt={'company logo'}/>
                     <ul className={styles.sidebar_links} onClick={handleNavLink}>
-                        <li className={styles.sidebar_link} id='home'></li>          
-                        <li className={styles.sidebar_link} id='movies'></li>
-                        <li className={styles.sidebar_link} id='tvseries'></li>
-                        <li className={styles.sidebar_link} id='bookmarks'></li>
+                        <li className={styles.sidebar_link} id='/user/home'></li>          
+                        <li className={styles.sidebar_link} id='/user/movies'></li>
+                        <li className={styles.sidebar_link} id='/user/tvseries'></li>
+                        <li className={styles.sidebar_link} id='/user/bookmarks'></li>
                     </ul>
                 </div>}
             <img 
