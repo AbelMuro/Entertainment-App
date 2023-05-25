@@ -1,3 +1,12 @@
+.movieContainer{
+    margin-top: 34px;
+}
+
+.tvSeriesContainer{
+    margin-top: 40px;
+}
+
+
 .title{
     margin: 0px 0px 38px 0px;
     font-family: var(--font);
@@ -6,6 +15,15 @@
     line-height: 40.32px;
     letter-spacing: -0.5px;
     color: white;
+}
+
+.message{
+    font-family: var(--font);
+    font-weight: 300;
+    font-size:  20px;
+    line-height: 30px;
+    letter-spacing: -0.2px;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .allMovies{
@@ -42,6 +60,14 @@
     .title{
         margin-bottom: 24px;
     }
+
+    .movieContainer{
+        margin-top: 33px;
+    }
+
+    .tvSeriesContainer{
+        margin-top: 48px;
+    }
 }
 
 @media(max-width: 700px){
@@ -54,8 +80,10 @@
     .title{
         font-size: 20px;
     } 
-    .container{
+    
+    .moviesContainer, .tvSeriesContainer{
         padding-left: 16px;
+        margin-top: 24px;        
     }
 }
 

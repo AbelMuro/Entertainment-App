@@ -4,7 +4,7 @@ import assets from '../../Common/icons';
 import useMediaQuery from '../../Hooks/useMediaQuery';
 import {Context} from '../../Context';
 
-function DisplayMovie({movie}) {
+function DisplayMovie({movie, removeBookmark}) {
     const {dispatchBookmarks} = useContext(Context);
     const tablet = useMediaQuery('(max-width: 768px)');
     const mobile = useMediaQuery('(max-width: 600px)');
@@ -23,12 +23,15 @@ function DisplayMovie({movie}) {
         playButton.style.opacity = '';
     }
 
-    const handleBookmark = (e) => {
+    const saveBookmark = (e) => {
         const movie = e.target.getAttribute('data-name');
-        console.log(movie);
         dispatchBookmarks({type: 'add bookmark', bookmark: movie});
-
     }
+
+    const deleteBookmark = (e) => {
+        const movie = e.target.getAttribute('data-name');
+        dispatchBookmarks({type: 'remove bookmark', bookmark: movie })
+    }   
 
     const changeMovieImage = useCallback((movie) => {
         if(mobile)
@@ -72,7 +75,7 @@ function DisplayMovie({movie}) {
                     {movie['name']}
                 </div>
             </div>
-            <div className={styles.movie_bookmark} onClick={handleBookmark} data-name={movie['name']}>
+            <div className={styles.movie_bookmark} onClick={removeBookmark ? deleteBookmark : saveBookmark} data-name={movie['name']}>
                 <div className={styles.movie_bookmarkIcon}></div>
             </div>
         </div>
