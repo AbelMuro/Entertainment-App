@@ -38,7 +38,7 @@ function Login() {
 
     useEffect(() => {
         if(isLoggedIn)
-            navigate('/home');
+            navigate('/user');
     }, [isLoggedIn])
 
 
@@ -49,7 +49,7 @@ function Login() {
 
 
     return(
-        <main className={styles.loginContainer}>
+        <div className={styles.loginContainer}>
             <img src={assets['logo']} className={styles.logo}/>
             <form className={styles.loginBox} onSubmit={handleSubmit}>
                 <h1 className={styles.loginBox_title}>
@@ -65,7 +65,7 @@ function Login() {
                     <a onClick={handleClick}>Sign Up</a>
                 </p>
             </form>
-        </main>
+        </div>
     )
 }
 

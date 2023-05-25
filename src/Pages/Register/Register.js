@@ -43,7 +43,7 @@ function Register() {
     }
 
     return(
-        <main className={styles.container}>
+        <section className={styles.container}>
             <img src={assets['logo']} className={styles.container_icon}/>
 
             <form className={styles.inputContainer} onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ function Register() {
                 </p>
             </form>
             <Dialog openDialog={open}/>
-        </main>
+        </section>
     )
 }
 

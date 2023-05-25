@@ -1,3 +1,3 @@
-import { searchReducer } from "./Reducers.js";
+import { searchReducer, bookmarkReducer } from "./Reducers.js";
 
-export default searchReducer;
+export {searchReducer, bookmarkReducer};

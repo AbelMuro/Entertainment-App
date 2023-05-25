@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './styles.module.css';
-import movies from '../../Data/AllMoviesAndTVseries';
 import DisplayMovie from '../../Components/DisplayMovie';
+import movies from '../../Data/AllMoviesAndTVseries';
 
-function Movies() {
-    return(
+function TVSeries() {
+    return(        
         <section className={styles.container}>
             <h1 className={styles.title}>
-                Movies
+                TV Series
             </h1>
             <div className={styles.allMovies}>
                 {movies.map((movie) => {
-                    if(movie['type'] !== 'Movie')
+                    if(movie['type'] !== 'TV Series')
                         return;
 
                     return(
@@ -23,4 +23,4 @@ function Movies() {
     )
 }
 
-export default Movies;
+export default TVSeries;

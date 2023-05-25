@@ -46,16 +46,5 @@ body{
     body{
         padding: 0px;
     }
-    .container{
-        grid-template-columns: auto;
-        padding: 23px 0px 0px 25px;
-        gap: 33px;
-    }
 
-}
-@media(max-width: 600px){
-    .container{
-        padding: 0px;
-        gap: 24px;
-    }
 }

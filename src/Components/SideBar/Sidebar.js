@@ -4,13 +4,13 @@ import assets from '../../Common/icons';
 import useMediaQuery from '../../Hooks/useMediaQuery';
 import { signOut } from 'firebase/auth';
 import {auth} from '../../Firebase';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 function Sidebar() {
     const navigate = useNavigate();
     const mobile = useMediaQuery('(max-width: 768px)');
-    const [navLink, setNavLink] = useState('home');
+    const [navLink, setNavLink] = useState('/user/home');
 
     const handleNavLink = (e) => {
         if(!e.target.matches('.' + styles.sidebar_link)) 
@@ -42,7 +42,7 @@ function Sidebar() {
     }, [navLink])
 
     useEffect(() => {
-        navigate(`${navLink}`);
+        navigate(navLink);
     }, [navLink])
 
 

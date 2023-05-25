@@ -4,9 +4,22 @@ import TrendingMovies from '../../../Data/AllMoviesAndTVseries';
 import icons from '../../../Common/icons';
 import useMediaQuery from '../../../Hooks/useMediaQuery';
 
-
 function Trending() {
     const mobile = useMediaQuery('(max-width: 600px)');
+
+    const handleEnter = (e) => {
+        const overlay = e.target;
+        const playButton = overlay.firstElementChild;
+        overlay.style.opacity = '1';
+        playButton.style.opacity = '1';
+    }
+
+    const handleLeave = (e) => {
+        const overlay = e.target;
+        const playButton = overlay.firstElementChild;
+        overlay.style.opacity = '';
+        playButton.style.opacity = '';
+    }
 
     return(
         <>
@@ -19,10 +32,18 @@ function Trending() {
 
                     return(
                         <div className={styles.movie} key={movie['name']}>
-                            <div className={styles.overflow}>
-                                <img 
-                                    src={mobile ? movie['small image trending'] : movie["large image trending"]} 
-                                    className={styles.movie_image}/>                                
+                            <img 
+                                src={mobile ? movie['small image trending'] : movie["large image trending"]} 
+                                className={styles.movie_image}
+                                />   
+                            <div className={styles.overlay}
+                                 onMouseEnter={handleEnter}
+                                 onMouseLeave={handleLeave}
+                                 >
+                                <div className={styles.movie_play}>
+                                    <img src={icons['playIcon']} className={styles.movie_playIcon}/>
+                                    Play
+                                </div>  
                             </div>
 
                             <div className={styles.movie_data}>
