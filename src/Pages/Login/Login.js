@@ -19,6 +19,10 @@ function Login() {
         navigate('/register');
     }
 
+    const handleSkipLogin = () => {
+        navigate('/user');
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const userEmail = email.current.state;
@@ -52,13 +56,16 @@ function Login() {
         <div className={styles.loginContainer}>
             <img src={assets['logo']} className={styles.logo}/>
             <form className={styles.loginBox} onSubmit={handleSubmit}>
+                <a className={styles.skipLogin} onClick={handleSkipLogin}>
+                    Skip Login
+                </a>
                 <h1 className={styles.loginBox_title}>
                     Login
                 </h1>
                 <Input type='email' placeholder='Email address' typeMismatchMessage='Invalid email' ref={email}/>
                 <Input type='password' placeholder='Password' ref={password}/>
                 <button type='submit' value={'Login to your account'}className={styles.loginBox_submit}>
-                    {loading ? <CircularProgress size={'30px'}/> : 'Login to your account'}
+                    {loading ? <CircularProgress size='30px'/> : 'Login to your account'}
                 </button>
                 <p className={styles.loginBox_createAccount}>
                     Don't have an account?&nbsp;

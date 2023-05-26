@@ -1,3 +1,4 @@
+
 .loginContainer{
     display: flex;
     flex-direction: column;
@@ -21,7 +22,24 @@
     gap: 24px;
     border-radius: 20px;
     background-color: #161D2F;
+    position: relative;
 }
+
+.skipLogin{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgb(2, 2, 211);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.skipLogin:hover{
+    text-decoration: underline;
+}
+
 
 .loginBox_title{
     margin-bottom: 16px;
@@ -73,3 +91,15 @@
 }
 
 
+@media(max-width: 500px){
+    .loginContainer{
+        margin-top: 48px;
+        gap: 58px;
+        width: 327px;
+    }
+
+    .loginBox{
+        width: 327px;
+    }
+
+}
