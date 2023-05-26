@@ -15,7 +15,6 @@
 
 .loginBox{
     width: 100%;
-    height: 373px;
     padding: 32px;
     display: flex;
     flex-direction: column;
@@ -84,6 +83,15 @@
 .loginBox_createAccount a {
     color: #FC4747;
     cursor: pointer;
+}
+
+.errorMessage{
+    display: none;
+    color:#FC4747;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 300;
 }
 
 .loginBox_createAccount a:hover {

@@ -16,7 +16,6 @@
     width: 100%;
     border-radius: 20px;
     background-color: var(--container-bg);
-    height: 418px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -71,6 +70,16 @@
 .loginLink:hover{
     text-decoration: underline;
 }
+
+.errorMessage{
+    display: none;
+    color:#FC4747;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 300;
+}
+
 
 
 

@@ -15,6 +15,8 @@ function Register() {
     const email = useRef();
     const password = useRef();
     const confirmPassword = useRef();
+    const passwordErrorMessage = useRef();
+    const invalidEmailMessage = useRef();
 
     const handleNavigate = () => {
         navigate('/');
@@ -26,11 +28,14 @@ function Register() {
         const userPassword = password.current.state;
         const userConfirmPassword = confirmPassword.current.state;
 
+        invalidEmailMessage.current.style.display = '';
+
         if(userPassword !== userConfirmPassword){
-            alert("Passwords don't match");
+            passwordErrorMessage.current.style.display = 'block'
             return;
         }
         try{
+           passwordErrorMessage.current.style.display = ''
            setLoading(true);
            await createUserWithEmailAndPassword(auth, userEmail, userPassword); 
            await signOut(auth);
@@ -38,7 +43,8 @@ function Register() {
            setOpen(true)                    //this will open the dialog that displays a message to the user
         }
         catch(error){
-            console.log(error);
+            setLoading(false);
+            invalidEmailMessage.current.style.display = 'block';
         }
     }
 
@@ -53,6 +59,12 @@ function Register() {
                 <Input type='email' placeholder='Email' typeMismatchMessage='Invalid email' ref={email}/>              
                 <Input type='password' placeholder='Password' ref={password}/>     
                 <Input type='password' placeholder='Repeat password' ref={confirmPassword}/>  
+                <div className={styles.errorMessage} ref={passwordErrorMessage}>
+                    Passwords don't match
+                </div>
+                <div className={styles.errorMessage} ref={invalidEmailMessage}>
+                    Email is already registered
+                </div>
                 <button className={styles.inputContainer_submit}>
                     {loading ? <CircularProgress size={'30px'}/> : 'Create an account'}
                 </button>

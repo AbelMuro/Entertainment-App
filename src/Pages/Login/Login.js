@@ -14,6 +14,8 @@ function Login() {
     const navigate = useNavigate();
     const email = useRef();
     const password = useRef();
+    const submitButton = useRef();
+    const errorMessage = useRef();
 
     const handleClick = () => {
         navigate('/register');
@@ -25,6 +27,8 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        errorMessage.current.style.display = '';
+        submitButton.current.style.marginTop = '';
         const userEmail = email.current.state;
         const userPassword = password.current.state;
 
@@ -35,7 +39,9 @@ function Login() {
             navigate('/user');
         }
         catch(error){
-            console.log(error)
+            setLoading(false);
+            errorMessage.current.style.display = 'block';
+            submitButton.current.style.marginTop = '0px';
         }
     }
 
@@ -64,7 +70,8 @@ function Login() {
                 </h1>
                 <Input type='email' placeholder='Email address' typeMismatchMessage='Invalid email' ref={email}/>
                 <Input type='password' placeholder='Password' ref={password}/>
-                <button type='submit' value={'Login to your account'}className={styles.loginBox_submit}>
+                <div className={styles.errorMessage} ref={errorMessage}>Invalid Email or Password</div>
+                <button type='submit' value={'Login to your account'}className={styles.loginBox_submit} ref={submitButton}>
                     {loading ? <CircularProgress size='30px'/> : 'Login to your account'}
                 </button>
                 <p className={styles.loginBox_createAccount}>
