@@ -44,7 +44,7 @@ function Trending() {
                                 <div className={styles.dot}></div>
                                 <div className={styles.movie_type}>
                                     <img 
-                                        src={movie['type'] === 'Movie' ? icons['movieIcon'] : icons['tvIcon']} 
+                                        src={movie['type'] === 'Movie' ? icons['movieCategoryIcon'] : icons['tvSeriesCategoryIcon']} 
                                         className={styles.movie_icon}
                                     />
                                     {movie['type']}

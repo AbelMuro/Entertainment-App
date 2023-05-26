@@ -5,20 +5,14 @@
     gap: 36px;
 }
 
-.innerContainer {
-    width: 100%;
-}
-
-
 .innerContainer{
-    width: 1280px;
+    width: 2480px;
     overflow: hidden;
 }
 
 
 
-
-@media(max-width: 1445px){
+@media(max-width: 2660px){
     .innerContainer{
         width: 100%;
     }
@@ -29,6 +23,7 @@
         padding-left: 16px;
     }
 }
+
 
 @media(max-width: 768px){
     body{
