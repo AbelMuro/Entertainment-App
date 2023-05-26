@@ -1,24 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './styles.module.css';
 import TrendingMovies from '../../../Data/AllMoviesAndTVseries';
 import icons from '../../../Common/icons';
 import useMediaQuery from '../../../Hooks/useMediaQuery';
+import {Context} from '../../../Context';
 
 function Trending() {
     const mobile = useMediaQuery('(max-width: 600px)');
+    const {setOpenBookmarkDialog, dispatchBookmarks} = useContext(Context);
 
-    const handleEnter = (e) => {
-        const overlay = e.target;
-        const playButton = overlay.firstElementChild;
-        overlay.style.opacity = '1';
-        playButton.style.opacity = '1';
-    }
-
-    const handleLeave = (e) => {
-        const overlay = e.target;
-        const playButton = overlay.firstElementChild;
-        overlay.style.opacity = '';
-        playButton.style.opacity = '';
+    const handleBookmark = (e) => {
+        const movieName = e.target.getAttribute('data-name');
+        dispatchBookmarks({type: 'add bookmark', bookmark: movieName});
+        setOpenBookmarkDialog({open: true, dialog: 'add'});
     }
 
     return(
@@ -36,10 +30,7 @@ function Trending() {
                                 src={mobile ? movie['small image trending'] : movie["large image trending"]} 
                                 className={styles.movie_image}
                                 />   
-                            <div className={styles.overlay}
-                                 onMouseEnter={handleEnter}
-                                 onMouseLeave={handleLeave}
-                                 >
+                            <div className={styles.overlay}>
                                 <div className={styles.movie_play}>
                                     <img src={icons['playIcon']} className={styles.movie_playIcon}/>
                                     Play
@@ -66,7 +57,7 @@ function Trending() {
                                     {movie['name']}
                                 </h2>
                             </div>
-                            <div className={styles.movie_bookmark}>
+                            <div className={styles.movie_bookmark} onClick={handleBookmark} data-name={movie['name']}>
                                 <div className={styles.bookmarkIcon}></div>
                             </div>
                         </div>

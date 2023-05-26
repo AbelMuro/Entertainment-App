@@ -30,7 +30,7 @@ function Sidebar() {
         Array.from(allNavLinks).map((currentNavLink) => {
             currentNavLink.style.backgroundColor = '';
         })
-    }, [navLink])
+    }, [navLink, mobile])
 
     useEffect(() => {
         const allNavLinks = document.querySelectorAll('.' + styles.sidebar_link)
@@ -39,7 +39,7 @@ function Sidebar() {
                 currentNavLink.style.backgroundColor = 'white';
         })
         
-    }, [navLink])
+    }, [navLink, mobile])
 
     useEffect(() => {
         navigate(navLink);

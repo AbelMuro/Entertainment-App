@@ -1,15 +1,37 @@
-.container{
+.grid{
     width: 100%;
     display: grid;
     grid-template-columns: 96px auto;
     gap: 36px;
 }
 
+.innerContainer {
+    width: 100%;
+}
+
+
+.innerContainer{
+    width: 1280px;
+    overflow: hidden;
+}
+
+@media(max-width: 1445px){
+    .innerContainer{
+        width: 100%;
+    }
+}
+
+@media(max-width: 600px){
+    .innerContainer{
+        padding-left: 16px;
+    }
+}
+
 @media(max-width: 768px){
     body{
         padding: 0px;
     }
-    .container{
+    .grid{
         grid-template-columns: auto;
         padding: 23px 0px 0px 25px;
         gap: 33px;
@@ -17,7 +39,7 @@
 }
 
 @media(max-width: 600px){
-    .container{
+    .grid{
         padding: 0px;
         gap: 24px;
     }

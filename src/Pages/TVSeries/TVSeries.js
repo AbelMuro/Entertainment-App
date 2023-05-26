@@ -5,7 +5,7 @@ import movies from '../../Data/AllMoviesAndTVseries';
 
 function TVSeries() {
     return(        
-        <section className={styles.container}>
+        <>
             <h1 className={styles.title}>
                 TV Series
             </h1>
@@ -19,7 +19,7 @@ function TVSeries() {
                     )
                 })}
             </div>
-        </section>
+        </>
     )
 }
 

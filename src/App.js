@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Movies from './Pages/Movies';
 import TVSeries from './Pages/TVSeries';
 import Bookmarks from './Pages/Bookmarks';
+import Search from './Pages/Search';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -21,7 +22,8 @@ function App () {
                         <Route path='/user/home' element={<Home/>}/>  
                         <Route path='/user/movies' element={<Movies/>}/>  
                         <Route path='/user/tvseries' element={<TVSeries/>}/>  
-                        <Route path='/user/bookmarks' element={<Bookmarks/>}/>                        
+                        <Route path='/user/bookmarks' element={<Bookmarks/>}/>   
+                        <Route path='/user/search' element={<Search/>}/>                     
                     </Route>  
                 </Routes>            
         </BrowserRouter>

@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import AllMoviesAndTVseries from '../../../Data/AllMoviesAndTVseries';
-import DisplayMovie from '../../../Components/DisplayMovie';
-
+import DisplayMovie from  '../../../Components/DisplayMovie';
 
 function Recommended() {
 

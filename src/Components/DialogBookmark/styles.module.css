@@ -1,0 +1,18 @@
+.dialog{
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: blue;
+    font-family: var(--font);
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    color: white;
+    position: fixed;
+    top: -250px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    white-space: nowrap;
+    z-index: var(--even-closer);
+}

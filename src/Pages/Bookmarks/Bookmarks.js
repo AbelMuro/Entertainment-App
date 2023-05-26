@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import styles from './styles.module.css';
 import { Context } from '../../Context';
 import MoviesAndTVSeries from '../../Data/AllMoviesAndTVseries';
@@ -7,6 +7,13 @@ import DisplayMovie from '../../Components/DisplayMovie';
 
 function Bookmarks() {
     const {bookmarks} = useContext(Context);
+    const [bookmarkedMovies, setBookmarkedMovies] = useState(true);         //these states are used to decide to display a message to the user
+    const [bookmarkedTvSeries,setBookmarkedTvSeries] = useState(true);
+
+    useEffect(() => {
+        setBookmarkedMovies(true);
+        setBookmarkedTvSeries(true);
+    }, [bookmarks])
 
     return (    
         <div>
@@ -19,15 +26,18 @@ function Bookmarks() {
                         const movieName = movie['name'];
                         const movieType = movie['type'];
 
-                        if(bookmarks.includes(movieName) && movieType === 'Movie')
+                        if(bookmarks.includes(movieName) && movieType === 'Movie'){
+                            bookmarkedMovies ?  setBookmarkedMovies(false) : "";
                             return(
                                 <DisplayMovie movie={movie} key={movieName} removeBookmark={true}/>   /* removeBookmark prop is used to determine which event handler to use for the bookmark button on the top right corner*/
-                            )
+                            )                            
+                        }
+
                     })                
                     }
-                    <div className={styles.message}>
+                    {bookmarkedMovies ? <div className={styles.message}>
                         No Bookmarked Movies
-                    </div>
+                    </div> : <></>}
                 </div>
             </section>     
             <section className={styles.tvSeriesContainer}>
@@ -39,12 +49,18 @@ function Bookmarks() {
                         const seriesName = tvSeries['name'];
                         const seriesType = tvSeries['type'];
 
-                        if(bookmarks.includes(seriesName) && seriesType === 'TV Series')
+                        if(bookmarks.includes(seriesName) && seriesType === 'TV Series'){
+                            bookmarkedTvSeries ?  setBookmarkedTvSeries(false) : "";;
                             return(
                                 <DisplayMovie movie={tvSeries} key={seriesName} removeBookmark={true}/> /* removeBookmark prop is used to determine which event handler to use for the bookmark button on the top right corner*/
-                            )
+                            )                            
+                        }
+
                     })}
                 </div>
+                {bookmarkedTvSeries ? <div className={styles.message}>
+                    No Bookmarked TV Series
+                </div> : <></>}
             </section>     
         </div>  
 

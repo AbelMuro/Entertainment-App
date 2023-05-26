@@ -80,6 +80,10 @@
     .title{
         font-size: 20px;
     } 
+
+    .message{
+        font-size: 14px;
+    }
     
     .moviesContainer, .tvSeriesContainer{
         padding-left: 16px;

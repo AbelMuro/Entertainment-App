@@ -76,6 +76,10 @@
         flex-direction: row;
     }
 
+    .sidebar_links{
+        gap: 32px;
+    }
+
     .sidebar_icons{
         width: 70%;
     }
@@ -96,6 +100,10 @@
 
     .sidebar_logo{
         width: 25px;
+    }
+
+    .sidebar_links{
+        gap: 24px;
     }
 
     .sidebar_link{

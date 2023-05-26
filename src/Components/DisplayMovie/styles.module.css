@@ -46,14 +46,14 @@
 .overlay{
     overflow: hidden;
     border-radius: 8px;
-    opacity: 0;    
-    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;  
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100%;
+    height: 75%;
     transition: opacity 0.2s linear;
+    cursor: pointer
 }
 
 .movie_play{
@@ -78,6 +78,12 @@
     right: 0;
     margin: auto;
 }
+
+.overlay:hover, .overlay:hover .movie_play{
+    opacity: 1;
+}
+
+
 
 .movie_data{
     margin-top: 6px;
@@ -123,7 +129,6 @@
     color: white;
     grid-column: 1/6;
 }
-
 
 @media(max-width: 905px){
 

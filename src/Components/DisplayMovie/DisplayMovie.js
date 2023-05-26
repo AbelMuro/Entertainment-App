@@ -1,34 +1,31 @@
-import React, {useCallback, useContext} from 'react';
+import React, {useRef, useCallback, useContext} from 'react';
 import styles from './styles.module.css';
 import assets from '../../Common/icons';
 import useMediaQuery from '../../Hooks/useMediaQuery';
 import {Context} from '../../Context';
 
 function DisplayMovie({movie, removeBookmark}) {
-    const {dispatchBookmarks} = useContext(Context);
+    const {dispatchBookmarks, setOpenBookmarkDialog} = useContext(Context);
+    const image = useRef();
     const tablet = useMediaQuery('(max-width: 768px)');
     const mobile = useMediaQuery('(max-width: 600px)');
     
-    const handleEnter = (e) => {
-        const overlay = e.target;
-        const playButton = overlay.firstElementChild;
-        overlay.style.opacity = '1';
-        playButton.style.opacity = '1';
+    const handleEnter = () => {
+        image.current.style.filter = 'brightness(30%)';
     }
 
-    const handleLeave = (e) => {
-        const overlay = e.target;
-        const playButton = overlay.firstElementChild;
-        overlay.style.opacity = '';
-        playButton.style.opacity = '';
+    const handleLeave = () => {
+        image.current.style.filter = '';
     }
 
     const saveBookmark = (e) => {
+        setOpenBookmarkDialog({open: true, dialog: 'add'});
         const movie = e.target.getAttribute('data-name');
         dispatchBookmarks({type: 'add bookmark', bookmark: movie});
     }
 
     const deleteBookmark = (e) => {
+        setOpenBookmarkDialog({open: true, dialog: 'remove'});
         const movie = e.target.getAttribute('data-name');
         dispatchBookmarks({type: 'remove bookmark', bookmark: movie })
     }   
@@ -47,9 +44,11 @@ function DisplayMovie({movie, removeBookmark}) {
 
         <div className={styles.movie} key={movie['name']}>
 
-            <img src={changeMovieImage(movie)} className={styles.movie_image}/> 
+            <img src={changeMovieImage(movie)} className={styles.movie_image} alt={movie['name']} ref={image}/>                
             <div className={styles.overlay}
-            >
+                onMouseEnter={handleEnter}
+                onMouseLeave={handleLeave}
+                >
                 <div className={styles.movie_play}>
                     <img src={assets['playIcon']} className={styles.movie_playIcon}/>
                     Play

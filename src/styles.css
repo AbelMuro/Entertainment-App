@@ -12,6 +12,7 @@
 }
 
 :root{
+    --even-closer: 40;
     --closest: 30;    
     --closer: 10;
     --far: 0;

@@ -5,7 +5,7 @@ import DisplayMovie from '../../Components/DisplayMovie';
 
 function Movies() {
     return(
-        <section className={styles.container}>
+        <>
             <h1 className={styles.title}>
                 Movies
             </h1>
@@ -19,7 +19,7 @@ function Movies() {
                     )
                 })}
             </div>
-        </section>
+        </>
     )
 }
 

@@ -17,16 +17,18 @@ export function bookmarkReducer(state, action) {
         case 'add bookmark':
             const newBookmarks = [...bookmarks, action.bookmark];
             const JSONbookmarks = JSON.stringify(newBookmarks)
-            localStorage.setItem('movie bookmarks', JSONbookmarks);
+            localStorage.setItem('bookmarks', JSONbookmarks);
             return newBookmarks;
+
         case 'remove bookmark':
             let storedBookmarks = JSON.parse(localStorage.getItem('bookmarks'));
             storedBookmarks = storedBookmarks.filter((bookmark) => {
                 return bookmark === action.bookmark ? false : true;
             })
             const JSONstoredBookmarks = JSON.stringify(storedBookmarks);
-            localStorage.setItem('movie bookmarks', JSONstoredBookmarks);
+            localStorage.setItem('bookmarks', JSONstoredBookmarks);
             return storedBookmarks;
+
         default:
             return state;
     }
