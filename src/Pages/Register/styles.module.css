@@ -84,11 +84,8 @@
 }
 
 
-
-
 @media(max-width: 500px){
     .container{
-        margin-top: 48px;
         gap: 58px;
         width: 327px;
     }
