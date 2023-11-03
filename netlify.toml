@@ -5,5 +5,5 @@ status = 200
 
 [[redirects]]
 from = "/user/*"
-to = "/index.html"
+to = "/user/home"
 status = 200
