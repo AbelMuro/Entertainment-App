@@ -14,7 +14,7 @@ module.exports = {
             filename: 'index.html',           //our production html file will be named index.html
             template: './src/index.html'      //this is a template for our production html file, we are defining how the html will look like before we make our production html file
         }),
-        new dotenv
+        new dotenv({systemvars: true})         
     ],
     devServer: {                              //configuration property for the development server
         port: 9000,                           //the devServer will start in port 3000
