@@ -36,9 +36,9 @@ import asiaIn24DaysLarge from './AsiaIn24Days/regular/large.jpg';
 import asiaIn24DaysMedium from './AsiaIn24Days/regular/medium.jpg';
 import asiaIn24DaysSmall from './AsiaIn24Days/regular/small.jpg';
 
-import autoSportTheSeriesLarge from './AutoSportTheSeries/regular/large.jpg';
-import autoSportTheSeriesMedium from './AutoSportTheSeries/regular/medium.jpg';
-import autoSportTheSeriesSmall from './AutoSportTheSeries/regular/small.jpg';
+import autoSportTheSeriesLarge from './AutosportTheSeries/regular/large.jpg';
+import autoSportTheSeriesMedium from './AutosportTheSeries/regular/medium.jpg';
+import autoSportTheSeriesSmall from './AutosportTheSeries/regular/small.jpg';
 
 import belowEchoLarge from './BelowEcho/regular/large.jpg';
 import belowEchoMedium from './BelowEcho/regular/medium.jpg';
@@ -104,9 +104,9 @@ import theHeiressLarge from './TheHeiress/regular/large.jpg';
 import theHeiressMedium from './TheHeiress/regular/medium.jpg';
 import theHeiressSmall from './TheHeiress/regular/small.jpg';
 
-import theRockiesLarge from './theRockies/regular/large.jpg';
-import theRockiesMedium from './theRockies/regular/medium.jpg';
-import theRockiesSmall from './theRockies/regular/small.jpg';
+import theRockiesLarge from './TheRockies/regular/large.jpg';
+import theRockiesMedium from './TheRockies/regular/medium.jpg';
+import theRockiesSmall from './TheRockies/regular/small.jpg';
 
 import theTastyFourLarge from './TheTastyFour/regular/large.jpg';
 import theTastyFourMedium from './TheTastyFour/regular/medium.jpg';
